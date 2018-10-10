@@ -1,0 +1,20 @@
+cat /etc/centos-release #to check version of os
+cat /etc/redhat-release
+getconf  LONG_BIT  #to check bit versioning
+yum -y install wget  #installing wget tool
+wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm  #downloading repo of mysql
+yum -y install mysql-community-release-el7-5.noarch.rpm  #installing downloaded repo file
+yum -y install mysql-server #installing mysql server
+systemctl start mysqld #starting mysql server
+systemctl enable mysqld #enabling mysql server
+systemctl status mysqld #verifying status of mysql server
+mysql -u root #accessing mysql
+show databases  ; #command to see available databases
+quit #command to exit from mysql
+mysql_secure_installation #command to start configuration and security of mysql server
+mysql -u root -p #giving password for user
+create user 'minu'@'%' identified by 'tanu' ; #creating a user minu who is identified by password tanu
+create database minu ; #now creating database as minu
+grant all privileges on minu.* to 'minu'@'%' ; #now it is going to give all privileges to user minu
+show databases ;
+quit
